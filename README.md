@@ -23,7 +23,7 @@
 
 ![The filter pane, showing every Coastal video](screenshots/filters.png)
 
-### Find what's the same, and compare it
+### Find duplicates and compare versions
 
 - **Duplicates.** Exact copies are found by their content. Near-duplicates, such as the same video at another resolution, are found by a visual fingerprint, at a sensitivity you choose.
 - **Compare side by side.** Play two versions of a video next to each other, kept in step, to see which looks better before deciding which to keep, and mark the pair as compared.
@@ -100,9 +100,11 @@ Online lookups are off in every new catalog. When you turn them on, you choose t
 |---|---|
 | **No telemetry** | No analytics, crash reports, update checks or remote fonts. The app makes no network connections unless you turn on online lookups. |
 | **Discreet logs** | The app's log never contains titles, file names, paths, tags, names or searches. |
+| **Encrypted catalogs** | An encrypted catalog's database, thumbnails, previews and images are encrypted at rest with ChaCha20-Poly1305. Decrypted data is never written to temporary files. Creating one gives you a recovery key, so a forgotten password doesn't mean a lost catalog. |
+| **Unencrypted catalogs** | On a computer only you use, you can create an unencrypted catalog instead, with an optional lock password. The choice is made when the catalog is created and can't be changed later. |
 | **Lock** | Press Ctrl+L to lock the catalog. It closes, and your password brings it back. |
-| **Encryption, if you want it** | An encrypted catalog's database, thumbnails, previews and images are encrypted at rest with ChaCha20-Poly1305. Decrypted data is never written to temporary files. Creating one gives you a recovery key, so a forgotten password doesn't mean a lost catalog. |
-| **Or not** | On a computer only you use, you can create an unencrypted catalog instead, with an optional lock password. The choice is made when the catalog is created and can't be changed later. |
+
+![Unlocking an encrypted catalog](screenshots/unlock.png)
 
 Keep as many catalogs as you like, wherever you like: on an external drive, next to your videos, or on a USB stick with the app.
 
@@ -118,9 +120,9 @@ Encryption is a real trade-off, not a free setting: every page the app reads fro
 | Scroll to a new screen of 30 thumbnails | 131.9 | 106.7 |
 | Hover a card for its preview | 13.6 | 13.2 |
 
-Both columns are fast enough to feel instant on a page of results. The gap shows most where many stored images are read at once, such as scrolling quickly through a large library, and barely at all on single reads like a hover preview. On a small or medium library you are unlikely to notice either way. Measured 2026-11-03 with the project's search benchmark, which times the same queries the app runs, on both kinds of catalog, after every change that affects them.
+Both columns are fast enough to feel instant on a page of results. The gap shows most where many stored images are read at once, such as scrolling quickly through a large library, and barely at all on single reads like a hover preview. On a small or medium library you are unlikely to notice either way.
 
-![Unlocking an encrypted catalog](screenshots/unlock.png)
+*Measured 2026-11-03 with the project's search benchmark, which times the same queries the app runs on both kinds of catalog after every change that affects them.*
 
 ## On the roadmap
 
